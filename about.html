@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | Hello, World!</title>
+    <style>
+      :root { --ink:#f8fafc; --muted:#cbd5e1; --card:rgba(15,23,42,.7); --line:rgba(255,255,255,.16); }
+      * { box-sizing:border-box; } body { min-height:100vh; margin:0; display:grid; place-items:center; padding:2rem; color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,sans-serif; background:radial-gradient(circle at 12% 12%,#2563eb 0,transparent 29rem),radial-gradient(circle at 88% 82%,#9333ea 0,transparent 27rem),#101828; }
+      main { width:min(100%,720px); padding:clamp(2rem,6vw,4.5rem); border:1px solid var(--line); border-radius:2rem; background:var(--card); box-shadow:0 24px 80px rgba(0,0,0,.35); backdrop-filter:blur(18px); }
+      nav { display:flex; gap:1rem; margin-bottom:3rem; } nav a { color:var(--muted); text-decoration:none; } nav a:hover, nav a[aria-current="page"] { color:#fff; } nav a[aria-current="page"] { font-weight:700; }
+      .eyebrow { color:#a5f3fc; font-size:.82rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; } h1 { margin:.65rem 0 1rem; font-size:clamp(2.7rem,8vw,5rem); line-height:1; letter-spacing:-.055em; } p { color:var(--muted); font-size:1.08rem; line-height:1.75; } .values { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:1rem; margin-top:2rem; } .value { padding:1.25rem; border:1px solid var(--line); border-radius:1rem; background:rgba(255,255,255,.05); } .value strong { display:block; margin-bottom:.35rem; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <nav aria-label="Primary navigation"><a href="hello-world.html">Home</a><a href="about.html" aria-current="page">About</a><a href="contact.html">Contact</a></nav>
+      <span class="eyebrow">About this space</span>
+      <h1>A small idea with a bright future.</h1>
+      <p>This little website is a welcoming place to explore, make, and share. It is intentionally simple—but never boring.</p>
+      <section class="values" aria-label="Our values"><div class="value"><strong>Curiosity</strong>Questions lead the way.</div><div class="value"><strong>Craft</strong>Details make the difference.</div><div class="value"><strong>Connection</strong>Good ideas are better shared.</div></section>
+    </main>
+  </body>
+</html>
