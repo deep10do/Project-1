@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101828" />
+    <title>Hello, World!</title>
+    <style>
+      :root { --ink: #f8fafc; --muted: #cbd5e1; --card: rgba(15, 23, 42, .68); --line: rgba(255,255,255,.16); }
+      * { box-sizing: border-box; }
+      body { min-height: 100vh; margin: 0; display: grid; place-items: center; overflow: hidden; color: var(--ink); font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; background: radial-gradient(circle at 15% 20%, #7c3aed 0, transparent 28rem), radial-gradient(circle at 85% 80%, #0891b2 0, transparent 26rem), #101828; }
+      .orb { position: fixed; width: 17rem; aspect-ratio: 1; border-radius: 50%; background: rgba(255,255,255,.08); animation: drift 10s ease-in-out infinite alternate; }
+      .orb:first-child { top: -6rem; right: 8%; } .orb:nth-child(2) { bottom: -7rem; left: 7%; animation-delay: -4s; }
+      main { position: relative; width: min(90%, 680px); padding: clamp(2.5rem, 7vw, 5rem); text-align: center; background: var(--card); border: 1px solid var(--line); border-radius: 2rem; box-shadow: 0 24px 80px rgba(0,0,0,.35); backdrop-filter: blur(18px); animation: appear 700ms cubic-bezier(.2,.8,.2,1) both; }
+      .badge { display: inline-flex; align-items: center; gap: .5rem; padding: .45rem .8rem; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: .85rem; letter-spacing: .04em; text-transform: uppercase; }
+      .badge::before { width: .55rem; height: .55rem; content: ""; border-radius: 50%; background: #34d399; box-shadow: 0 0 16px #34d399; }
+      h1 { margin: 1.5rem 0 .75rem; font-size: clamp(3rem, 10vw, 6.25rem); line-height: .95; letter-spacing: -.07em; background: linear-gradient(120deg, #fff, #c4b5fd 48%, #67e8f9); -webkit-background-clip: text; background-clip: text; color: transparent; }
+      p { margin: 0 auto; max-width: 34rem; color: var(--muted); font-size: clamp(1rem, 2.5vw, 1.18rem); line-height: 1.65; }
+      button { margin-top: 2rem; padding: .9rem 1.25rem; border: 0; border-radius: .9rem; color: #111827; background: linear-gradient(120deg, #f5f3ff, #a5f3fc); font: inherit; font-weight: 700; cursor: pointer; box-shadow: 0 12px 30px rgba(34,211,238,.2); transition: transform 180ms ease, box-shadow 180ms ease; }
+      button:hover { transform: translateY(-3px); box-shadow: 0 17px 35px rgba(34,211,238,.3); } button:focus-visible { outline: 3px solid #67e8f9; outline-offset: 4px; }
+      @keyframes appear { from { opacity: 0; transform: translateY(24px) scale(.97); } to { opacity: 1; transform: none; } } @keyframes drift { to { transform: translate(2rem, 1.25rem) rotate(12deg); } }
+      @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+    </style>
+  </head>
+  <body>
+    <div class="orb"></div><div class="orb"></div>
+    <main>
+      <span class="badge">A fresh beginning</span>
+      <h1>Hello, World!</h1>
+      <p>Welcome to a tiny corner of the web—built with curiosity, a little color, and a lot of possibility.</p>
+      <button type="button" id="greeting">Say hello back</button>
+    </main>
+    <script>document.querySelector('#greeting').addEventListener('click', event => { event.currentTarget.textContent = 'Hello to you, too! ✨'; });</script>
+  </body>
+</html>
